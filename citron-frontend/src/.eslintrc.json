@@ -1,0 +1,160 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "simple-import-sort"
+  ],
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:@ngrx/recommended",
+        "prettier"
+      ],
+      "rules": {
+        "prettier/prettier": [
+          "error",
+          {
+            "printWidth": 80,
+            "tabWidth": 2,
+            "useTabs": true,
+            "semi": true,
+            "singleQuote": true,
+            "quoteProps": "consistent",
+            "trailingComma": "es5",
+            "bracketSpacing": true,
+            "arrowParens": "always",
+            "endOfLine": "lf"
+          },
+          {
+            "usePrettierrc": false
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "pjoy",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "pjoy",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/prefer-on-push-component-change-detection": [
+          "error"
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "error", {
+            "argsIgnorePattern": "^_"
+          }
+        ],
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "no-public"
+          }
+        ],
+        "eol-last": [
+          "error",
+          "unix"
+        ],
+        "simple-import-sort/imports": [
+          "error"
+        ],
+        "simple-import-sort/exports": [
+          "error"
+        ],
+        "no-console": [
+          "warn",
+          {
+            "allow": [
+              "warn",
+              "error"
+            ]
+          }
+        ],
+        "no-alert": [
+          "error"
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.spec.ts"
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": [
+          "off"
+        ],
+        "@typescript-eslint/no-non-null-assertion": [
+          "off"
+        ],
+        "@typescript-eslint/no-empty-function": [
+          "off"
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended",
+        "prettier"
+      ],
+      "rules": {
+        "prettier/prettier": [
+          "error",
+          {
+            "printWidth": 120,
+            "tabWidth": 2,
+            "useTabs": true,
+            "endOfLine": "lf",
+            "parser": "angular",
+            "embeddedLanguageFormatting": "off",
+            "bracketSameLine": true,
+            "htmlWhitespaceSensitivity": "strict"
+          },
+          {
+            "usePrettierrc": false
+          }
+        ],
+        "@angular-eslint/template/i18n": [
+          "error",
+          {
+            "checkId": false,
+            "checkText": true,
+            "checkAttributes": false
+          }
+        ],
+        "simple-import-sort/imports": [
+          "error"
+        ],
+        "simple-import-sort/exports": [
+          "error"
+        ],
+        "eol-last": [
+          "error",
+          "unix"
+        ]
+      }
+    }
+  ]
+}
