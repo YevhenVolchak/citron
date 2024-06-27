@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'citron-frontend' title`, () => {
+  it(`should have the 'citron' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('citron-frontend');
+    expect(app.title).toEqual('citron');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, citron-frontend');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, citron');
   });
 });
